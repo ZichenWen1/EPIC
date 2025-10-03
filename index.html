@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="EPIC - Efficient Multi-modal Large Language Models via Progressive Consistency Distillation">
+    <meta name="keywords" content="MLLM, Efficiency, Distillation, Computer Vision, NLP">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EPIC - NeurIPS 2025</title>
+    <!-- <title style="margin-top: 32px;">EPIC - NeurIPS 2025</title> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/index.css">
+
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">Efficient Multi-modal Large Language Models via
+                            Progressive Consistency Distillation</h1>
+                        <div style="margin-top: 12px; margin-bottom: 12px;">
+                            <p class="subtitle is-3 conference-title">NeurIPS 2025</p>
+                        </div>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><a href="https://scholar.google.com/citations?user=N-aPFvEAAAAJ&hl=zh-CN" target="_blank"><b>Zichen Wen</b></a><sup>1, 2</sup>,</span>
+                            <span class="author-block"><a href="https://gszfwsb.github.io/" target="_blank"><b>Shaobo Wang</b></a><sup>1</sup>,</span>
+                            <span class="author-block"><a href="https://masterzhou1.github.io/" target="_blank"><b>Yufa Zhou</b></a><sup>3</sup>,</span>
+                            <span class="author-block"><a href="https://scholar.google.com/citations?user=uwwqEg8AAAAJ&hl=en" target="_blank"><b>Junyuan Zhang</b></a><sup>4</sup>,</span>
+                            <span class="author-block"><a href="https://scholar.google.com/citations?user=vKb4LloAAAAJ&hl=en" target="_blank"><b>Qintong Zhang</b></a><sup>5</sup>,</span> <br>
+                            <span class="author-block"><a href="" target="_blank"><b>Yifeng Gao</b></a><sup>1</sup>,</span> 
+                            <span class="author-block"><a href="https://billchan226.github.io/" target="_blank"><b>Zhaorun Chen</b></a><sup>6</sup>,</span>
+                            <span class="author-block"><a href="https://wangbindl.github.io/" target="_blank"><b>Bin Wang</b></a><sup>2</sup>,</span>
+                            <span class="author-block"><a href="https://liweijia.github.io/" target="_blank"><b>Weijia Li</b></a><sup>7, 2</sup>,</span>
+                            <span class="author-block"><a href="https://conghui.github.io/" target="_blank"><b>Conghui He</b></a><sup>2,*</sup>,</span>
+                            <span class="author-block"><a href="http://www.zhanglinfeng.tech/" target="_blank"><b>Linfeng Zhang</b></a><sup>1,*</sup></span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>EPIC Lab, Shanghai Jiao Tong University,</span>
+                            <span class="author-block"><sup>2</sup>Shanghai AI Laboratory,</span>
+                            <span class="author-block"><sup>3</sup>Duke University,</span> <br>
+                            <span class="author-block"><sup>4</sup>The University of Hong Kong,</span>
+                            <span class="author-block"><sup>5</sup>Peking University,</span>
+                            <span class="author-block"><sup>6</sup>University of Chicago,</span>
+                            <span class="author-block"><sup>7</sup>Sun Yat-sen University,</span>
+                            <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding authors</small></span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/pdf/2510.00515" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="https://github.com/ZichenWen1/EPIC" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon"><i class="fab fa-github"></i></span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark bibtex-btn">
+                                        <span class="icon"><i class="fas fa-quote-right"></i></span>
+                                        <span>BibTeX</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Visual tokens consume substantial computational resources in multi-modal large models
+                            (MLLMs), significantly compromising their efficiency. Recent works have attempted to improve
+                            efficiency by compressing visual tokens during training, either through modifications to
+                            model components or by introducing additional parameters. However, they often overlook the
+                            increased learning difficulty caused by such compression, as the model’s parameter space
+                            struggles to quickly adapt to the substantial perturbations in the feature space induced by
+                            token compression. In this work, we propose to develop <b>E</b>fficient MLLMs via
+                            <b>P</b>rogress<b>I</b>ve <b>C</b>onsistency Distillation (<b>EPIC</b>), a progressive
+                            learning framework. Specifically, by decomposing the feature space perturbations introduced
+                            by token compression along the token-wise and layer-wise dimensions, we introduce token
+                            consistency distillation and layer consistency distillation, respectively, aiming to reduce
+                            the training difficulty by leveraging guidance from a teacher model and following a
+                            progressive learning trajectory. Extensive experiments demonstrate the superior
+                            effectiveness, robustness, and generalization capabilities of our proposed framework.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <h2 class="title is-3">Motivation</h2>
+                <div class="content has-text-justified" style="font-size: 16px; margin-bottom: 1rem;">
+                    <p>
+                        When implementing token compression (e.g., pruning 80% of visual tokens) in MLLMs training, this essentially introduces significant perturbations in the feature space. Direct training makes it difficult for the model's parameter space to adapt to such disturbances and converge to the desired optimum. Therefore, it is necessary to design more suitable learning strategies tailored to token compression. Inspired by curriculum learning, which advocates learning from easy samples before gradually advancing to harder ones, we propose modeling the perturbations introduced by token compression in the feature space as a progressive learning trajectory from simple to complex.
+                    </p>
+                </div>
+                <img src="static/motivation.jpg" alt="Motivation"
+                    style="width: 100%; height: auto; display: block; margin: auto; border-radius: 5px;">
+                <div class="content has-text-justified" style="font-size: 16px; margin-top: 1rem;">
+                    <p>
+                        <b>Motivation.</b> Progressive Consistency Distillation vs. Direct Training. Each subplot shows the loss landscape under the corresponding
+                        token compression ratio, with the <b style="color:#2ca02c;">optimum</b> indicated. Our method reaches the objective via
+                        <b style="color:orange;">progressive</b> learning trajectories, while <b style="color:red;">direct</b> training remains
+                        challenging.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <h2 class="title is-3">Overview</h2>
+                <img src="static/teaser.jpg" alt="EPIC Framework Overview"
+                    style="width: 100%; height: auto; display: block; margin: auto; border-radius: 5px;">
+                <div class="content has-text-justified" style="font-size: 16px; margin-top: 1rem;">
+                    <p>
+                        <b>An overview of Progressive Consistency Distillation.</b> (i) Token Consistency Distillation
+                        progressively increases token compression ratio over time. (ii) Layer Consistency Distillation
+                        shifts token compression from deep to shallow layers, promoting layer-wise consistency during
+                        training.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h2 class="title is-3">Results</h2>
+
+            <h3 class="title is-4" style="margin-top: 2rem;">Main Results</h3>
+            <img src="static/main_results.jpg" alt="Main Results" style="width: 100%; border-radius: 5px;">
+            <div class="content has-text-justified" style="font-size: 16px; margin-top: 0.1rem;">
+                <p>
+                    <span>
+                        Performance on 10 visual understanding benchmarks. <code>Res.</code> is resolution, and <code>#Vision Tokens</code> is the number of vision
+                        tokens. Both training and inference employ DART as the token compression strategy for our methods. Parentheses in
+                        <code>Avg.(%)</code> column show diffs vs. LLaVA-v1.5.
+                    </span>
+                </p>
+            </div>
+
+            <!-- <h3 class="title is-4" style="margin-top: 2rem;">Comparison with Baselines</h3>
+            <img src="static/compare_with_baselines.jpg" alt="Comparison with Baselines"
+                style="width: 100%; border-radius: 5px;"> -->
+
+            <h3 class="title is-4" style="margin-top: 2rem;">Inference Efficiency</h3>
+            <img src="static/inference_efficiency.jpg" alt="Inference Efficiency"
+                style="width: 100%; border-radius: 5px;">
+            <div class="content has-text-justified" style="font-size: 16px; margin-top: 0.1rem;">
+                <p>
+                    <span>
+                        <b>Inference efficiency analysis of <code>EPIC</code>.</b>
+                        <span>&#916;</span> denotes the reduction ratio.
+                        All experiments are on POPE (<span>8,910</span> samples) using a NVIDIA A100 80GB GPU. Token compression is fixed at the 2nd layer.
+                    </span>
+                </p>
+            </div>
+
+            <h3 class="title is-4" style="margin-top: 2rem;">Generalization</h3>
+            <div class="content has-text-justified" style="font-size: 16px; margin-bottom: 1rem;">
+                <p>
+                    We further show that our framework EPIC enables strong generalization across different token compression strategies. Even when trained with a single strategy (e.g., DART), the model performs well with other methods like FastV and Random at inference, consistently improving results. Our approach also narrows the performance gap between strategies, especially boosting those that previously lagged behind.
+                </p>
+            </div>
+            <img src="static/generalization_across_method.jpg" alt="Generalization Across Methods"
+                style="width: 100%; border-radius: 5px;">
+            <div class="content has-text-justified" style="font-size: 16px; margin-top: 0.1rem;">
+                <p>
+                    <span>
+                        <b>Generalization Across Methods.</b> Following LLaVA-v1.5's architecture and data, we apply <code>DART</code> for token consistency distillation. ``w/o train''
+                        denotes vanilla LLaVA. At inference, all methods use <span>88.9%</span> token compression.
+                    </span>
+                </p>
+            </div>
+
+            <h3 class="title is-4" style="margin-top: 0rem;">Analysis</h3>
+            <div class="content has-text-justified" style="font-size: 16px; margin-bottom: 1rem;">
+                <p>
+                    Many token compression methods aggressively reduce tokens to very few, but our analysis shows this can significantly hurt performance. While fewer tokens always save memory, they don't always make inference much faster. As shown in our experiments, reducing tokens from 576 to 128 brings large efficiency gains, but further reduction yields diminishing returns in speed and a sharp drop in accuracy. Retaining around 64 tokens preserves most model performance and offers the best trade-off—this is the <b>High ROI</b> area. Compressing further brings little extra speedup but much worse results (<b>Low ROI</b> area), as the system becomes memory-bound. Thus, extreme compression is unnecessary; it's better to balance latency and performance.
+                </p>
+            </div>
+            <img src="static/analysis.jpg" alt="Analysis" style="width: 100%; border-radius: 5px;">
+            <div class="content has-text-justified" style="font-size: 16px; margin-top: 0.1rem;">
+                <p>
+                    <span>
+                        <b>Analysis.</b> All experiments use the model trained following LLaVA-v1.5. FLOPs and latency are measured on the POPE. Visual token and
+                        latency experiments are repeated three times for reliability.
+                    </span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{wen2025efficient,
+    title={Efficient Multi-modal Large Language Models via Progressive Consistency Distillation},
+    author={Zichen Wen and Shaobo Wang and Yufa Zhou and Junyuan Zhang and Qintong Zhang and Yifeng Gao and Zhaorun Chen and
+    Bin Wang and Weijia Li and Conghui He and Linfeng Zhang},
+    journal={arXiv preprint arXiv:2510.00515},
+    year={2025},
+}</code></pre>
+        </div>
+    </section>
+    <!--End BibTex citation -->
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+    
+                        <p>
+                            This page was built using the <a
+                                href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                                target="_blank">Academic Project Page Template</a>. This website is licensed under a <a
+                                rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Statcounter tracking code -->
+    
+    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+    
+    <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
