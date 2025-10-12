@@ -334,6 +334,11 @@ EPIC enables strong generalization across different token compression strategies
   <img src="assets/generalization.jpg" alt="generalization Figure" width="100%">
 </p>
 
+## 📌 TODO
+- [ ] Release checkpoints
+- [ ] Release LCD implementation
+
+
 
 <!-- ## 🛠️ Advanced Features
 
