@@ -49,7 +49,9 @@
 </p>
 Visual tokens consume substantial computational resources in multi-modal large models (MLLMs), significantly compromising their efficiency. Recent works have attempted to improve efficiency by compressing visual tokens during training, either through modifications to model components or by introducing additional parameters. However, they often overlook the increased learning difficulty caused by such compression, as the model's parameter space struggles to quickly adapt to the substantial perturbations in the feature space induced by token compression.
 
-<br>
+
+<br><br>
+
 
 <p align="center">
   <img src="assets/overview.jpg" alt="EPIC Overview Figure" width="100%">
