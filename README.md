@@ -249,7 +249,7 @@ EPIC_dev/
 - **Model Factory**: `llava/model/pruning_methods/factory.py` - Creates models based on compression method
 - **Trainer Factory**: `llava/model/pruning_methods/trainer_factory.py` - Creates specialized trainers
 - **Configuration**: `llava/model/pruning_methods/config.py` - Manages compression parameters
-- **Unified Training**: `llava/train/train_mem_KD_unified.py` - Main training entry point
+- **TCD Training**: `llava/train/train_mem_KD_TCD.py` - Main training entry point
 
 <!-- ### Training Parameters
 
