@@ -37,7 +37,9 @@
 </p>
 
 
-
+## 📰 News
+* **`2025.10.13`** 🎉 We have released our code for [EPIC](https://github.com/zichenwen1/EPIC)!
+* **`2025.10.01`** 🤗🤗 We release our latest work [EPIC](https://arxiv.org/pdf/2510.00515), an efficient framework for progressive consistency distillation in multi-modal large language models.
 
 
 
