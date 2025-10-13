@@ -125,7 +125,7 @@ class TrainingArguments(transformers.TrainingArguments):
     disable_dropout: bool = field(default=False)
 
 # Reuse the original data processing functions
-from llava.train.train_KD_from_pretrain_dart import (
+from llava.train.train import (
     maybe_zero_3, get_peft_state_maybe_zero_3, get_peft_state_non_lora_maybe_zero_3,
     get_mm_adapter_state_maybe_zero_3, find_all_linear_names, safe_save_model_for_hf_trainer,
     smart_tokenizer_and_embedding_resize, _tokenize_fn, _mask_targets, _add_speaker_and_signal,
