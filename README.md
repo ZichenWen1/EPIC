@@ -341,6 +341,7 @@ EPIC enables strong generalization across different token compression strategies
 ## 📌 TODO
 - [ ] Release checkpoints
 - [ ] Release LCD implementation
+- [ ] Release evaluation code
 
 
 
