@@ -364,7 +364,7 @@ class FastV(LlamaModel):
                         # keep index
                         # retained_image_tokens_index = self.get_retained_image_token(self.config, last_layer_state, any_states)
 
-                        # batch -> debug 发现 get_retained_image_token_batch有问题
+                        # batch processing -> debug: get_retained_image_token_batch function has issues
                         # retained_image_tokens_index_batch = self.get_retained_image_token_batch(self.config, last_layer_state, any_states)
                         retained_image_tokens_index_batch = self.process_batch(self.config, last_layer_state, self.last_attention)
                         self.retained_image_num = retained_image_tokens_index_batch.size(1)
@@ -582,7 +582,7 @@ class FastV(LlamaModel):
         batch_size = any_states.size(0)
         device = last_layer_state.device
 
-        # 调整维度 [batch, seq_len, layers*hidden_dim]
+        # reshape dimensions: [batch, seq_len, layers*hidden_dim]
         any_states = any_states.permute(0, 2, 1, 3).reshape(any_states.size(0), any_states.size(2), -1)
 
         batch_retained_indices = []
@@ -2475,5 +2475,3 @@ class LlamaForCausalLM(LlamaPreTrainedModel):
             }
         )
         return model_inputs
-
-
