@@ -215,8 +215,8 @@ class LLaVATrainer_KD(LLaVATrainer):
         else:
             teacher_logits_aligned = teacher_logits
 
-        probs, sft_loss = self.get_p(teacher_logits_aligned, teacher_outputs)
-        logprobs, sft_loss, student_labels = self.get_logp(student_logits, student_outputs)
+        probs, _ = self.get_p(teacher_logits_aligned, teacher_outputs)
+        logprobs, _, student_labels = self.get_logp(student_logits, student_outputs)
         
         # distillation_loss = self.compute_distillation_loss(logprobs, probs, student_labels)
         distillation_loss = self.compute_distillation_loss_standard(logprobs, probs, student_labels)

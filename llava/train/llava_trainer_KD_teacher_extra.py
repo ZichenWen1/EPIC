@@ -681,8 +681,8 @@ class LLaVATrainer_KD(LLaVATrainer):
 
         expanded_indices = student_retained_indices.unsqueeze(-1).expand(-1, -1, teacher_logits.size(-1))
         teacher_logits_aligned = torch.gather(filled_teacher_logits, dim=1, index=expanded_indices)
-        probs, sft_loss = self.get_p(teacher_logits_aligned, teacher_outputs)
-        logprobs, sft_loss, student_labels = self.get_logp(student_logits, student_outputs)
+        probs, _ = self.get_p(teacher_logits_aligned, teacher_outputs)
+        logprobs, _, student_labels = self.get_logp(student_logits, student_outputs)
         
         # distillation_loss = self.compute_distillation_loss(logprobs, probs, student_labels)
         distillation_loss = self.compute_distillation_loss_standard(logprobs, probs, student_labels)
